@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload = loadF()>
+<textarea id="ta" style="margin: 200px 0 0 700px"></textarea>
+</body>
+<script>
+    let str = "I'm F**king stupid!!";
+    let count =0;
+   function typing(evt) {
+       let ta = document.getElementById("ta");
+       let inp = evt.which;
+          if(count<str.length){
+              if(inp == 37 || inp ==38 || inp == 39|| inp==40){
+                  count++;
+              }else{
+                  ta.value=ta.value+str[count];
+                  count++;
+              }
+          }else{
+              count =0;
+              ta.value="";
+          }
+   }
+   function loadF() {
+       window.addEventListener('keypress',typing);
+   }
+
+</script>
+</html>
